@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Smythe&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>Jimmy's Diner</h1>
+            <h3>The best burgers and pizzas in town.</h3>
+        </div>
+    </header>
+
+    <section id="item-section">
+        
+    </section>
+
+    <section>
+        <div class="modal">
+            <h2>Your order</h2>
+            
+            <i class="fa-solid fa-xmark modal-close-btn" data-close-modal="close"></i>
+            <div class="checkout">
+                <div class="items"></div>
+            
+                <div class="total-price">
+                    <h2>Total price:</h2>
+                    <h2>$0</h2>
+                </div>
+            </div>
+            <button class="modal-btn" data-complete="completeorder">Complete order</button>
+            <p id="clear-basket-btn">Clear basket</p>
+        </div>
+        <div class="blank">
+            
+        </div>
+    </section>
+
+    <section>
+        <div class="payment-modal-outer" id="payment-modal-outer">
+            <div class="payment-modal-inner">
+                <h2>Enter card details</h2>
+                <i class="fa-solid fa-xmark modal-close-btn" data-close-payment-modal="close"></i>
+                <form id="payment-form">
+                    <label for="name-input">Name</label>
+                    <input id="name-input" 
+                    type="text" 
+                    placeholder="Enter your name" 
+                    aria-label="Enter full name"
+                    required>
+
+                    <label for="ccn">Card Number</label>
+                    <input id="ccn" 
+                    type="tel" 
+                    autocomplete="cc-number"
+                    maxlength="19" 
+                    minlength="16"
+                    placeholder="Enter card number"
+                    aria-label="Enter card number"
+                    required>
+
+                    <label for="cvv">CVV</label>
+                    <input id="cvv" 
+                    type="tel"
+                    autocomplete="cc-number"
+                    maxlength="3" 
+                    minlength="3"
+                    placeholder="Enter CVV"
+                    aria-label="Enter CVV"
+                    required>
+
+
+                    <button class="modal-btn" id="pay-btn">Pay</button>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+
+    <section>
+        <div id="popup">
+            <h2>Thanks, James! Your order is on its way!</h2>
+        </div>
+    </section>
+
+    <i class="fa-solid fa-cart-shopping shopping-cart" id="shopping-cart"></i>
+    
+    <script src="index.js" type="module"></script>
+</body>
+</html>
