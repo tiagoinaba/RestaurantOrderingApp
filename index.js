@@ -1,4 +1,6 @@
 import { menuItems } from "./data.js"
+
+
 const itemSection = document.getElementById('item-section')
 const myModal = document.querySelector('.modal')
 const ccnInput = document.getElementById('ccn')
@@ -47,7 +49,10 @@ document.addEventListener('click', function(e) {
 
 paymentForm.addEventListener('submit', function(e) {
     e.preventDefault()
-    paymentComplete()
+
+    const paymentFormData = new FormData(paymentForm)
+    let name = paymentFormData.get('name-input')
+    paymentComplete(name)
 })
 
 ccnInput.onkeydown = function(e) {
@@ -175,11 +180,11 @@ function clearBasket() {
     renderBasket()
 }
 
-function paymentComplete() {
+function paymentComplete(name) {
     clearBasket()
     closePaymentModal()
     closeModal()
-    displayCompletePopup()
+    displayCompletePopup(name)
 }
 
 function closePopup() {
@@ -191,9 +196,10 @@ function closePopup() {
     }
 }
 
-function displayCompletePopup() {
+function displayCompletePopup(name) {
     const popup = document.getElementById('popup')
     popup.style.display = 'block'
+    popup.innerHTML = `<h2>Thanks, ${name}! Your order is on its way!</h2>`
     document.getElementById('shopping-cart')
     .insertAdjacentHTML('afterend', `<div class="overlay"></div>`)
 }

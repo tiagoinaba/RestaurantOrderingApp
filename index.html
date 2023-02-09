@@ -54,13 +54,15 @@
                 <form id="payment-form">
                     <label for="name-input">Name</label>
                     <input id="name-input" 
+                    name="name-input"
                     type="text" 
                     placeholder="Enter your name" 
                     aria-label="Enter full name"
                     required>
 
                     <label for="ccn">Card Number</label>
-                    <input id="ccn" 
+                    <input id="ccn"
+                    name="ccn" 
                     type="tel" 
                     autocomplete="cc-number"
                     maxlength="19" 
@@ -71,6 +73,7 @@
 
                     <label for="cvv">CVV</label>
                     <input id="cvv" 
+                    name="cvv"
                     type="tel"
                     autocomplete="cc-number"
                     maxlength="3" 
@@ -89,7 +92,7 @@
 
     <section>
         <div id="popup">
-            <h2>Thanks, James! Your order is on its way!</h2>
+            
         </div>
     </section>
 
