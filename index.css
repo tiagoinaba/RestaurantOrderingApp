@@ -26,13 +26,14 @@ body {
 }
 
 .overlay {
-    position: absolute;
+    position: fixed; /* Positioning and size */
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
-}
-
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgba(128,128,128,0.5); color */
+    display: none; /* making it hidden by default */
+  }
 
 .item-graphic {
     align-self: center;

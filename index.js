@@ -190,36 +190,28 @@ function paymentComplete(name) {
 function closePopup() {
     const popup = document.getElementById('popup')
     popup.style.display = 'none'
-    const overlay = document.querySelectorAll('.overlay')
-    for(let element of overlay) {
-        element.parentNode.removeChild(element)
-    }
+    document.getElementById('overlay-two').style.display = 'none'
 }
 
 function displayCompletePopup(name) {
     const popup = document.getElementById('popup')
     popup.style.display = 'block'
+    document.getElementById('overlay-two').style.display = 'block'
     popup.innerHTML = `<h2>Thanks, ${name}! Your order is on its way!</h2>`
-    document.getElementById('shopping-cart')
-    .insertAdjacentHTML('afterend', `<div class="overlay"></div>`)
 }
 
 function openPaymentModal() {
     const paymentModal = document.querySelector('#payment-modal-outer')
     const payBtn = document.querySelector('#pay-btn')
-    itemSection.insertAdjacentHTML('afterbegin', `<div class="overlay"></div>`)
-    myModal.insertAdjacentHTML('beforeend', `<div class="overlay"></div>`)
+    document.getElementById('overlay').style.display = 'block'
     payBtn.innerText = `Pay $${sum}`
     paymentModal.classList.remove('payment-modal-outer')
 }
 
 function closePaymentModal() {
     const paymentModal = document.querySelector('#payment-modal-outer')
-    const overlay = document.querySelectorAll('.overlay')
-    for(let element of overlay) {
-        element.parentNode.removeChild(element)
-    }
     paymentModal.classList.add('payment-modal-outer')
+    document.getElementById('overlay').style.display = 'none'
 }
 
 function displayModal() {
